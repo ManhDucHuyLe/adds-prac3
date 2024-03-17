@@ -10,7 +10,7 @@ int Reverser::reverseDigit(int value) {
   int l = strNum.length();
   if (value < 10) {
     return value;
-  } else if (value < 0 || value > 9) {
+  } else if (value < 0) {
         return -1;
   } else {
     int a = value % 10;
@@ -22,10 +22,7 @@ int Reverser::reverseDigit(int value) {
 
 string Reverser::reverseString(string characters) {
   int l = characters.length();
-  int e = characters.empty();
-  if (e) {
-    return "ERROR";
-  } else if (l == 1) {
+  if (l == 1) {
     return characters;
   } else {
     char a = characters[l - 1];
