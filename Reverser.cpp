@@ -6,6 +6,9 @@
 Reverser::Reverser() {}
 
 int Reverser::reverseDigit(int value) {
+  if (value < 0 || value > 9) {
+        return -1;
+  }
   string strNum = to_string(value);
   int l = strNum.length();
   if (value < 10) {
@@ -20,8 +23,9 @@ int Reverser::reverseDigit(int value) {
 
 string Reverser::reverseString(string characters) {
   int l = characters.length();
-  if (l == 1) {
-    return characters;
+  int e = characters.empty();
+  if (l == 1 || e) {
+    return "ERROR";
   } else {
     char a = characters[l - 1];
     string reversedSubstring = reverseString(characters.substr(0, l - 1));
